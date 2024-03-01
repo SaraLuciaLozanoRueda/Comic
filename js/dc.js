@@ -81,20 +81,24 @@ function showHeroes() {
     modal.classList.add('modal');
     modal.style.display = 'none';
 
-
     const contenido = document.createElement('div');
     contenido.classList.add('contenido');
+
     const cerrar = document.createElement('span');
     cerrar.classList.add('cerrar');
     cerrar.textContent = 'Volver';
-    const imgModal = document.createElement('img'); 
-    imgModal.classList.add('imagen-modal');
+
+    const img = document.createElement('img');
+    img.classList.add('imagen-modal');
+
     const descripcion = document.createElement('p');
     descripcion.classList.add('descripcion-modal');
+
     contenido.appendChild(cerrar);
-    contenido.appendChild(imgModal); 
+    contenido.appendChild(img);
     contenido.appendChild(descripcion);
     modal.appendChild(contenido);
+
     personajes.forEach((personaje) => {
         const { img, nombre, info } = personaje;
         const heroDiv = document.createElement('div');
@@ -105,33 +109,37 @@ function showHeroes() {
                 <h3>${nombre}</h3>
             </div>
         `;
+
         const boton = document.createElement('button');
         boton.classList.add('boton');
         boton.textContent = 'Ver';
+
         boton.addEventListener('click', function () {
             modal.style.display = 'block';
             modal.style.top = '50%';
             modal.style.left = '50%';
             modal.style.transform = 'translate(-50%, -50%)'; 
-            imgModal.src = img;
+            img.src = img;
             descripcion.textContent = info;
         });
+
         heroDiv.appendChild(boton);
         obtener.appendChild(heroDiv);
     });
+
     cerrar.addEventListener('click', function () {
         modal.style.display = 'none';
     });
-    document.body.appendChild(modal);
-    const buscador = document.getElementById('searchInput');
 
+    document.body.appendChild(modal);
+
+    const buscador = document.getElementById('searchInput');
     buscador.addEventListener('input', function(e){
         const frase = e.target.value.toLowerCase().trim(); 
         const filtrados = personajes.filter(personaje => {
             return personaje.nombre.toLowerCase().includes(frase);
         });
-
-        obtener.innerHTML = '';
+        obtener.innerHTML = ''; // Limpiar contenido anterior
         filtrados.forEach(personaje => {
             const heroDiv = document.createElement('div');
             heroDiv.classList.add('heroes');
@@ -149,7 +157,7 @@ function showHeroes() {
                 modal.style.top = '50%';
                 modal.style.left = '50%';
                 modal.style.transform = 'translate(-50%, -50%)'; 
-                imgModal.src = personaje.img; 
+                img.src = personaje.img;
                 descripcion.textContent = personaje.info;
             });
             heroDiv.appendChild(boton);
