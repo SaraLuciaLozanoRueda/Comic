@@ -1,0 +1,174 @@
+*{margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.navDC{
+    background-color:rgb(138, 177, 192);
+}
+.navM{
+    background-color: rgb(151, 39, 39);
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    justify-content: space-between;
+}
+.logo{
+    width: 150px;
+    height: 120px;
+}
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    font-size: 30px;
+    color: #fff;
+}
+/* Estilos para los héroes */
+.heroes img {
+    padding-top: 10px ;
+    width: 200px;
+    height: 200px;
+}
+
+.heroes:hover{
+    transform: scale(1.1);
+}
+.heroes {
+    transition-duration: 0.9s;
+    display: inline-block;
+    margin: 10px;
+    width: 250px;
+    height: 300px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+#searchButton{
+    width: 50px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    background-color:gainsboro;
+    color:black;
+}
+#searchInput{
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: gainsboro;
+}
+
+.boton {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el modal */
+.modal {
+    position: fixed;
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.02);
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    z-index: 9999;
+    padding: 5px;
+    border: 1px solid #cce7d0;
+}
+
+.contenido {
+    position: relative;
+}
+
+.cerrar{
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 0px;
+    left: 500px;
+    cursor: pointer;
+}
+
+.cerrar:hover{
+    background-color: rgb(217, 105, 105);
+    transform: scale(1.04);
+}
+
+.imagen-modal {
+    max-width: 300px; 
+    height: 300px; 
+}
+
+@media (max-width:550px){
+    nav{
+        display: flex;
+        background-color: aquamarine;
+        text-align: center;
+        justify-content: center;
+        padding: 30px;
+    }
+    .logo{
+        width: 120px;
+        height: 70px;
+    }
+    .titulo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        font-size: 20px;
+    }
+    #heroes:hover{
+        scale: 0.9;
+    }
+}
+
+@media (max-width:500px) {
+    nav{
+        display:grid;
+        background-color: aquamarine;
+        padding: 30px;
+
+    }
+    .logo{
+        width: 250px;
+        height: 120px;
+    }
+
+    .cerrar{
+        background-color: red;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        cursor: pointer;
+    }
+    
+    .cerrar:hover{
+        background-color: rgb(217, 105, 105);
+        transform: scale(1.04);
+    }
+}
